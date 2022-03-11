@@ -10,7 +10,6 @@ from telegram.ext import (
     CallbackContext
 
 )
-from torch import USE_RTLD_GLOBAL_WITH_LIBTORCH
 
 
 WEBHOOK_URL = "104.197.6.61"
