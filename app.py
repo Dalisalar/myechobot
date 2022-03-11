@@ -19,9 +19,9 @@ WEBHOOK_PORT = "8443"
 CERT_PATH = "./url_cert.pem"
 KEY_PATH = "./url_private.key"
 
-API_TOKEN = "5063316173:AAGUZtfr1OQ9K-mY3w_pl81gOpj-6KKKBIg"
-updater = Updater(API_TOKEN)
-dp = updater.dispatcher
+# API_TOKEN = "5063316173:AAGUZtfr1OQ9K-mY3w_pl81gOpj-6KKKBIg"
+# updater = Updater(API_TOKEN)
+# dp = updater.dispatcher
 
 def start(update: Update, context: CallbackContext):
     update.message.reply_text("Hi!")
@@ -32,10 +32,19 @@ def echo(update: Update, context: CallbackContext):
 dp.add_handler(CommandHandler("start", start))
 dp.add_handler(MessageHandler(Filters.all & ~Filters.command, echo))
 
-updater.start_webhook(
-    webhook_url=WEBHOOK_URL,
-    listen=WEBHOOK_HOST,
-    port=WEBHOOK_PORT,
-    # cert=CERT_PATH,
-    # key=KEY_PATH
-)
+# updater.start_webhook(
+#     webhook_url=WEBHOOK_URL,
+#     listen=WEBHOOK_HOST,
+#     port=WEBHOOK_PORT,
+#     cert=CERT_PATH,
+#     key=KEY_PATH
+# )
+
+from flask import Flask
+
+app = Flask(__name__)
+
+@app.route("/")
+def index():
+    print("New request")
+    return "", 200
