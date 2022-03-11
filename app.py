@@ -47,3 +47,7 @@ app = Flask(__name__)
 def index():
     print("New request")
     return "", 200
+
+app.run(
+    port="8443"
+)
