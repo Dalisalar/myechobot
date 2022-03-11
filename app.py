@@ -30,11 +30,9 @@ def echo(update: Update, context: CallbackContext):
 dp.add_handler(CommandHandler("start", start))
 dp.add_handler(MessageHandler(Filters.all & ~Filters.command, echo))
 
-# updater.start_webhook(
-#     webhook_url=WEBHOOK_URL,
-#     port=WEBHOOK_PORT,
-#     cert=CERT_PATH,
-#     key=KEY_PATH
-# )
-
-updater.start_polling()
+updater.start_webhook(
+    webhook_url=WEBHOOK_URL,
+    port=WEBHOOK_PORT,
+    cert=CERT_PATH,
+    key=KEY_PATH
+)
