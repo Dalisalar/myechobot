@@ -16,8 +16,8 @@ WEBHOOK_URL = "104.197.6.61"
 WEBHOOK_LISTEN = "0.0.0.0"
 WEBHOOK_PORT = "8443"
 
-CERT_PATH = "./url_cert.pem"
-KEY_PATH = "./url_private.key"
+CERT_PATH = "./cert.pem"
+KEY_PATH = "./private.key"
 
 API_TOKEN = "5063316173:AAGUZtfr1OQ9K-mY3w_pl81gOpj-6KKKBIg"
 updater = Updater(API_TOKEN)
@@ -37,6 +37,6 @@ updater.start_webhook(
     port=WEBHOOK_PORT,
     url_path=API_TOKEN,
     webhook_url=f"https://{WEBHOOK_URL}:{WEBHOOK_PORT}/{API_TOKEN}",
-    # cert=CERT_PATH,
-    # key=KEY_PATH
+    cert=CERT_PATH,
+    key=KEY_PATH
 )
