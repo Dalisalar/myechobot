@@ -12,8 +12,8 @@ from telegram.ext import (
 
 )
 
-WEBHOOK_URL = "0.0.0.0"
-WEBHOOK_PORT = "8443"
+WEBHOOK_URL = "104.197.6.61"
+WEBHOOK_PORT = "80"
 CERT_PATH = "./url_cert.pem"
 KEY_PATH = "./url_private.key"
 
