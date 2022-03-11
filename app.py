@@ -33,7 +33,7 @@ dp.add_handler(CommandHandler("start", start))
 dp.add_handler(MessageHandler(Filters.all & ~Filters.command, echo))
 
 updater.start_webhook(
-    webhook_url=WEBHOOK_URL,
+    webhook_url=WEBHOOK_URL + "/" + API_TOKEN,
     listen=WEBHOOK_LISTEN,
     port=WEBHOOK_PORT,
     # cert=CERT_PATH,
