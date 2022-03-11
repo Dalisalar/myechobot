@@ -37,6 +37,6 @@ updater.start_webhook(
     port=WEBHOOK_PORT,
     url_path=API_TOKEN,
     webhook_url=f"https://{WEBHOOK_URL}:{WEBHOOK_PORT}/{API_TOKEN}",
-    cert=CERT_PATH,
-    key=KEY_PATH
+    # cert=CERT_PATH,
+    # key=KEY_PATH
 )
