@@ -36,6 +36,6 @@ updater.start_webhook(
     webhook_url=WEBHOOK_URL,
     listen=WEBHOOK_HOST,
     port=WEBHOOK_PORT,
-    cert=CERT_PATH,
-    key=KEY_PATH
+    # cert=CERT_PATH,
+    # key=KEY_PATH
 )
